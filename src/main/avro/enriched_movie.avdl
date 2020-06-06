@@ -1,0 +1,22 @@
+@namespace("ca.mcit.bigdata.kafka")
+protocol McitBigData {
+
+  record Movie {
+    int mid;
+    string title;
+    int year;
+    union{null,string} director=null ;
+  }
+  record Rating {
+    int rid;
+    int mid;
+    int stars;
+    string ratingdate;
+  }
+record EnrichedMovie
+{
+  Movie movie;
+
+  array<Rating> ratings ;
+}
+}
